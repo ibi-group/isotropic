@@ -9,6 +9,7 @@
         ],
         "sourceMaps": "inline"
     },
+    "bugs": "https://github.com/ibi-group/isotropic/issues",
     "contributors": [
         "Duane Sibilly <duane.sibilly@ibigroup.com>"
     ],
@@ -55,8 +56,10 @@
         },
         "root": true
     },
+    "homepage": "https://github.com/ibi-group/isotropic",
     "license": "BSD-3-Clause",
     "name": "isotropic",
+    "repository": "ibi-group/isotropic",
     "scripts": {
         "build": "babel js -d .",
         "lint": "eslint js test",
