@@ -55,7 +55,7 @@ describe('isotropic', () => {
         expect(make).to.be.a('function');
         expect(mixin).to.be.a('function');
         expect(PropertyChainer).to.be.a('function');
-        expect(prototypeChain).to.be.a('function');
+        expect(prototypeChain).to.be.a('generatorfunction');
         expect(Pubsub).to.be.a('function');
         expect(pubsubDefaultSymbol).to.be.a('symbol');
         expect(PubsubDispatcher).to.be.a('function');
