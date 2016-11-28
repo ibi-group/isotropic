@@ -26,8 +26,6 @@ import later from '../js/later.js';
 
 import line from '../js/line.js';
 
-import lineGlobal from '../js/line-global.js';
-
 import loggerGlobal from '../js/logger-global.js';
 
 import make from '../js/make.js';
@@ -48,7 +46,6 @@ describe('isotropic', () => {
         expect(forIn).to.be.a('function');
         expect(later).to.be.a('function');
         expect(line).to.be.a('function');
-        expect(lineGlobal).to.equal(line);
         expect(__line).to.be.a('number');
         expect(__logger).to.be.an('object');
         expect(loggerGlobal).to.equal(__logger);
