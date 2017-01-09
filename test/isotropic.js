@@ -3,6 +3,12 @@ import {
     it
 } from 'mocha';
 
+import {
+    mixinPrototypeChainFromInstanceObject,
+    mixinPrototypeChainFromPrototypeObject,
+    mixinPrototypeChainFromStaticObject
+} from '../js/mixin-prototype-chain.js';
+
 import Pubsub, {
     defaultSymbol as pubsubDefaultSymbol,
     Dispatcher as PubsubDispatcher,
@@ -21,6 +27,8 @@ import {
 } from 'chai';
 
 import forIn from '../js/for-in.js';
+
+import Initializable from '../js/initializable.js';
 
 import later from '../js/later.js';
 
@@ -44,6 +52,7 @@ describe('isotropic', () => {
         expect(create).to.be.a('function');
         expect(Error).to.be.a('function');
         expect(forIn).to.be.a('function');
+        expect(Initializable).to.be.a('function');
         expect(later).to.be.a('function');
         expect(line).to.be.a('function');
         expect(__line).to.be.a('number');
@@ -51,6 +60,9 @@ describe('isotropic', () => {
         expect(loggerGlobal).to.equal(__logger);
         expect(make).to.be.a('function');
         expect(mixin).to.be.a('function');
+        expect(mixinPrototypeChainFromInstanceObject).to.be.a('generatorfunction');
+        expect(mixinPrototypeChainFromPrototypeObject).to.be.a('generatorfunction');
+        expect(mixinPrototypeChainFromStaticObject).to.be.a('generatorfunction');
         expect(PropertyChainer).to.be.a('function');
         expect(prototypeChain).to.be.a('generatorfunction');
         expect(Pubsub).to.be.a('function');
