@@ -46,6 +46,8 @@ import prototypeChain from '../js/prototype-chain.js';
 
 import timeout from '../js/timeout.js';
 
+import valueToSource from '../js/value-to-source.js';
+
 describe('isotropic', () => {
     it('should export all isotropic APIs', () => {
         expect(asap).to.be.a('function');
@@ -71,5 +73,6 @@ describe('isotropic', () => {
         expect(PubsubEvent).to.be.a('function');
         expect(PubsubSubscription).to.be.a('function');
         expect(timeout).to.be.a('function');
+        expect(valueToSource).to.be.a('function');
     });
 });
