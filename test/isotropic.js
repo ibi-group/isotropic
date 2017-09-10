@@ -1,78 +1,49 @@
-import {
-    describe,
-    it
-} from 'mocha';
+import * as _mixinPrototypeChain from '../js/mixin-prototype-chain.js';
+import _Pubsub, * as _pubsub from '../js/pubsub.js';
+import _chai from 'chai';
+import _characterFold from '../js/character-fold.js';
+import _create from '../js/create.js';
+import _Error from '../js/error.js';
+import _forIn from '../js/for-in.js';
+import _Initializable from '../js/initializable.js';
+import _later from '../js/later.js';
+import _loggerGlobal from '../js/logger-global.js';
+import _make from '../js/make.js';
+import _mixin from '../js/mixin.js';
+import _mocha from 'mocha';
+import _naturalSort from '../js/natural-sort.js';
+import _PropertyChainer from '../js/property-chainer.js';
+import _prototypeChain from '../js/prototype-chain.js';
+import _timeout from '../js/timeout.js';
+import _valueToSource from '../js/value-to-source.js';
 
-import {
-    mixinPrototypeChainFromInstanceObject,
-    mixinPrototypeChainFromPrototypeObject,
-    mixinPrototypeChainFromStaticObject
-} from '../js/mixin-prototype-chain.js';
-
-import Pubsub, {
-    defaultSymbol as pubsubDefaultSymbol,
-    Dispatcher as PubsubDispatcher,
-    Event as PubsubEvent,
-    Subscription as PubsubSubscription
-} from '../js/pubsub.js';
-
-import asap from '../js/asap.js';
-
-import create from '../js/create.js';
-
-import Error from '../js/error.js';
-
-import {
-    expect
-} from 'chai';
-
-import forIn from '../js/for-in.js';
-
-import Initializable from '../js/initializable.js';
-
-import later from '../js/later.js';
-
-import line from '../js/line.js';
-
-import loggerGlobal from '../js/logger-global.js';
-
-import make from '../js/make.js';
-
-import mixin from '../js/mixin.js';
-
-import PropertyChainer from '../js/property-chainer.js';
-
-import prototypeChain from '../js/prototype-chain.js';
-
-import timeout from '../js/timeout.js';
-
-import valueToSource from '../js/value-to-source.js';
-
-describe('isotropic', () => {
-    it('should export all isotropic APIs', () => {
-        expect(asap).to.be.a('function');
-        expect(create).to.be.a('function');
-        expect(Error).to.be.a('function');
-        expect(forIn).to.be.a('function');
-        expect(Initializable).to.be.a('function');
-        expect(later).to.be.a('function');
-        expect(line).to.be.a('function');
-        expect(__line).to.be.a('number');
-        expect(__logger).to.be.an('object');
-        expect(loggerGlobal).to.equal(__logger);
-        expect(make).to.be.a('function');
-        expect(mixin).to.be.a('function');
-        expect(mixinPrototypeChainFromInstanceObject).to.be.a('generatorfunction');
-        expect(mixinPrototypeChainFromPrototypeObject).to.be.a('generatorfunction');
-        expect(mixinPrototypeChainFromStaticObject).to.be.a('generatorfunction');
-        expect(PropertyChainer).to.be.a('function');
-        expect(prototypeChain).to.be.a('generatorfunction');
-        expect(Pubsub).to.be.a('function');
-        expect(pubsubDefaultSymbol).to.be.a('symbol');
-        expect(PubsubDispatcher).to.be.a('function');
-        expect(PubsubEvent).to.be.a('function');
-        expect(PubsubSubscription).to.be.a('function');
-        expect(timeout).to.be.a('function');
-        expect(valueToSource).to.be.a('function');
+_mocha.describe('isotropic', () => {
+    _mocha.it('should export all isotropic APIs', () => {
+        _chai.expect(_characterFold).to.be.a('function');
+        _chai.expect(_create).to.be.a('function');
+        _chai.expect(_Error).to.be.a('function');
+        _chai.expect(_forIn).to.be.a('function');
+        _chai.expect(_Initializable).to.be.a('function');
+        _chai.expect(_later).to.be.a('function');
+        _chai.expect(_later).to.have.property('asap').that.is.a('function');
+        _chai.expect(_later).to.have.property('soon').that.is.a('function');
+        _chai.expect(__line).to.be.a('number');
+        _chai.expect(__logger).to.be.an('object');
+        _chai.expect(_loggerGlobal).to.equal(__logger);
+        _chai.expect(_make).to.be.a('function');
+        _chai.expect(_mixin).to.be.a('function');
+        _chai.expect(_mixinPrototypeChain.mixinPrototypeChainFromInstanceObject).to.be.a('function');
+        _chai.expect(_mixinPrototypeChain.mixinPrototypeChainFromPrototypeObject).to.be.a('function');
+        _chai.expect(_mixinPrototypeChain.mixinPrototypeChainFromStaticObject).to.be.a('function');
+        _chai.expect(_naturalSort).to.be.a('function');
+        _chai.expect(_PropertyChainer).to.be.a('function');
+        _chai.expect(_prototypeChain).to.be.a('function');
+        _chai.expect(_Pubsub).to.be.a('function');
+        _chai.expect(_pubsub.defaultSymbol).to.be.a('symbol');
+        _chai.expect(_pubsub.Dispatcher).to.be.a('function');
+        _chai.expect(_pubsub.Event).to.be.a('function');
+        _chai.expect(_pubsub.Subscription).to.be.a('function');
+        _chai.expect(_timeout).to.be.a('function');
+        _chai.expect(_valueToSource).to.be.a('function');
     });
 });
