@@ -28,33 +28,33 @@
         "Duane Sibilly <duane.sibilly@ibigroup.com>"
     ],
     "dependencies": {
-        "isotropic-character-fold": "~0.0.0",
-        "isotropic-create": "~0.5.0",
-        "isotropic-error": "~0.5.0",
-        "isotropic-for-in": "~0.5.0",
-        "isotropic-initializable": "~0.2.0",
-        "isotropic-later": "~0.5.0",
-        "isotropic-logger-global": "~0.5.0",
-        "isotropic-make": "~0.5.0",
-        "isotropic-mixin": "~0.5.0",
-        "isotropic-mixin-prototype-chain": "~0.2.0",
-        "isotropic-natural-sort": "~0.0.0",
-        "isotropic-property-chainer": "~0.5.0",
-        "isotropic-prototype-chain": "~0.5.0",
-        "isotropic-pubsub": "~0.6.0",
-        "isotropic-timeout": "~0.5.0",
-        "isotropic-value-to-source": "~0.1.0"
+        "isotropic-character-fold": "~0.1.0",
+        "isotropic-create": "~0.6.0",
+        "isotropic-error": "~0.6.0",
+        "isotropic-for-in": "~0.6.0",
+        "isotropic-initializable": "~0.3.0",
+        "isotropic-later": "~0.6.0",
+        "isotropic-logger-global": "~0.6.0",
+        "isotropic-make": "~0.6.0",
+        "isotropic-mixin": "~0.6.0",
+        "isotropic-mixin-prototype-chain": "~0.3.0",
+        "isotropic-natural-sort": "~0.1.0",
+        "isotropic-property-chainer": "~0.6.0",
+        "isotropic-prototype-chain": "~0.6.0",
+        "isotropic-pubsub": "~0.7.0",
+        "isotropic-timeout": "~0.6.0",
+        "isotropic-value-to-source": "~0.2.0"
     },
     "description": "A collection of utilities for large JavaScript projects with a consistent API.",
     "devDependencies": {
         "babel-cli": "~6.26.0",
         "babel-istanbul": "~0.12.2",
-        "babel-plugin-transform-line": "~0.3.0",
+        "babel-plugin-transform-line": "~0.4.0",
         "babel-preset-env": "~1.6.0",
         "babel-preset-minify": "~0.2.0",
         "chai": "~4.1.2",
         "eslint": "~4.6.1",
-        "eslint-plugin-isotropic": "~0.0.0",
+        "eslint-plugin-isotropic": "~0.1.0",
         "mocha": "~3.5.1",
         "nsp": "~2.8.0"
     },
@@ -96,5 +96,5 @@
         "securityCheck": "nsp check",
         "test": "babel-node ./node_modules/.bin/babel-istanbul test _mocha"
     },
-    "version": "0.5.0"
+    "version": "0.6.0"
 }
