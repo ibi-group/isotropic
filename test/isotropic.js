@@ -1,16 +1,22 @@
 import * as _mixinPrototypeChain from '../js/mixin-prototype-chain.js';
 import _Pubsub, * as _pubsub from '../js/pubsub.js';
+import _bunyanStreamIsotropic from '../js/bunyan-stream-isotropic.js';
 import _chai from 'chai';
 import _characterFold from '../js/character-fold.js';
+import _ClusterMaster from '../js/cluster-master.js';
+import _ClusterWorker from '../js/cluster-worker.js';
+import _console from '../js/console.js';
 import _create from '../js/create.js';
+import _durationToString from '../js/duration-to-string.js';
 import _Error from '../js/error.js';
 import _forIn from '../js/for-in.js';
 import _Initializable from '../js/initializable.js';
 import _later from '../js/later.js';
-import _loggerGlobal from '../js/logger-global.js';
+import _logger from '../js/logger.js';
 import _make from '../js/make.js';
 import _mixin from '../js/mixin.js';
 import _mocha from 'mocha';
+import _Mutex from '../js/mutex.js';
 import _naturalSort from '../js/natural-sort.js';
 import _PropertyChainer from '../js/property-chainer.js';
 import _prototypeChain from '../js/prototype-chain.js';
@@ -19,8 +25,15 @@ import _valueToSource from '../js/value-to-source.js';
 
 _mocha.describe('isotropic', () => {
     _mocha.it('should export all isotropic APIs', () => {
+        _chai.expect(_bunyanStreamIsotropic).to.be.an('object');
+        _chai.expect(_bunyanStreamIsotropic).to.have.property('write').that.is.a('function');
         _chai.expect(_characterFold).to.be.a('function');
+        _chai.expect(_ClusterMaster).to.be.an('function');
+        _chai.expect(_ClusterWorker).to.be.an('function');
+        _chai.expect(_console).to.be.an('object');
+        _chai.expect(_console).to.have.property('log').that.is.a('function');
         _chai.expect(_create).to.be.a('function');
+        _chai.expect(_durationToString).to.be.a('function');
         _chai.expect(_Error).to.be.a('function');
         _chai.expect(_forIn).to.be.a('function');
         _chai.expect(_Initializable).to.be.a('function');
@@ -28,13 +41,13 @@ _mocha.describe('isotropic', () => {
         _chai.expect(_later).to.have.property('asap').that.is.a('function');
         _chai.expect(_later).to.have.property('soon').that.is.a('function');
         _chai.expect(__line).to.be.a('number');
-        _chai.expect(__logger).to.be.an('object');
-        _chai.expect(_loggerGlobal).to.equal(__logger);
+        _chai.expect(_logger).to.be.an('object');
         _chai.expect(_make).to.be.a('function');
         _chai.expect(_mixin).to.be.a('function');
         _chai.expect(_mixinPrototypeChain.mixinPrototypeChainFromInstanceObject).to.be.a('function');
         _chai.expect(_mixinPrototypeChain.mixinPrototypeChainFromPrototypeObject).to.be.a('function');
         _chai.expect(_mixinPrototypeChain.mixinPrototypeChainFromStaticObject).to.be.a('function');
+        _chai.expect(_Mutex).to.be.an('function');
         _chai.expect(_naturalSort).to.be.a('function');
         _chai.expect(_PropertyChainer).to.be.a('function');
         _chai.expect(_prototypeChain).to.be.a('function');
