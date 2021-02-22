@@ -1,7 +1,7 @@
 import * as _mixinPrototypeChain from '../js/mixin-prototype-chain.js';
 import _Pubsub, * as _pubsub from '../js/pubsub.js';
 import _bunyanStreamIsotropic from '../js/bunyan-stream-isotropic.js';
-import _chai from 'chai';
+import _chai from 'isotropic-dev-dependencies/lib/chai.js';
 import _characterFold from '../js/character-fold.js';
 import _ClusterMaster from '../js/cluster-master.js';
 import _ClusterWorker from '../js/cluster-worker.js';
@@ -15,7 +15,7 @@ import _later from '../js/later.js';
 import _logger from '../js/logger.js';
 import _make from '../js/make.js';
 import _mixin from '../js/mixin.js';
-import _mocha from 'mocha';
+import _mocha from 'isotropic-dev-dependencies/lib/mocha.js';
 import _Mutex from '../js/mutex.js';
 import _naturalSort from '../js/natural-sort.js';
 import _PropertyChainer from '../js/property-chainer.js';
@@ -30,7 +30,7 @@ _mocha.describe('isotropic', () => {
         _chai.expect(_characterFold).to.be.a('function');
         _chai.expect(_ClusterMaster).to.be.an('function');
         _chai.expect(_ClusterWorker).to.be.an('function');
-        _chai.expect(_console).to.be.an('object');
+        _chai.expect(typeof _console).to.equal('object');
         _chai.expect(_console).to.have.property('log').that.is.a('function');
         _chai.expect(_create).to.be.a('function');
         _chai.expect(_durationToString).to.be.a('function');
