@@ -3,7 +3,7 @@ import _Pubsub, * as _pubsub from '../js/pubsub.js';
 import _bunyanStreamIsotropic from '../js/bunyan-stream-isotropic.js';
 import _chai from 'isotropic-dev-dependencies/lib/chai.js';
 import _characterFold from '../js/character-fold.js';
-import _ClusterMaster from '../js/cluster-master.js';
+import _ClusterPrimary from '../js/cluster-primary.js';
 import _ClusterWorker from '../js/cluster-worker.js';
 import _console from '../js/console.js';
 import _create from '../js/create.js';
@@ -28,7 +28,7 @@ _mocha.describe('isotropic', () => {
         _chai.expect(_bunyanStreamIsotropic).to.be.an('object');
         _chai.expect(_bunyanStreamIsotropic).to.have.property('write').that.is.a('function');
         _chai.expect(_characterFold).to.be.a('function');
-        _chai.expect(_ClusterMaster).to.be.an('function');
+        _chai.expect(_ClusterPrimary).to.be.an('function');
         _chai.expect(_ClusterWorker).to.be.an('function');
         _chai.expect(typeof _console).to.equal('object');
         _chai.expect(_console).to.have.property('log').that.is.a('function');
