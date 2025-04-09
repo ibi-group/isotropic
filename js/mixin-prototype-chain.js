@@ -1,5 +1,3 @@
 export {
-    mixinPrototypeChainFromInstanceObject,
-    mixinPrototypeChainFromPrototypeObject,
-    mixinPrototypeChainFromStaticObject
+    default
 } from 'isotropic-mixin-prototype-chain';

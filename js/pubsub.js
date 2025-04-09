@@ -1,7 +1,3 @@
 export {
-    default,
-    defaultSymbol,
-    Dispatcher,
-    Event,
-    Subscription
+    default
 } from 'isotropic-pubsub';
