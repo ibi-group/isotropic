@@ -26,6 +26,7 @@
     },
     "description": "A collection of utilities for large JavaScript projects with a consistent API",
     "devDependencies": {
+        "eslint": "~9.8.0",
         "isotropic-dev-dependencies": "~0.3.0"
     },
     "engines": {
