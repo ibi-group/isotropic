@@ -21,6 +21,7 @@
         "isotropic-property-chainer": "~0.14.0",
         "isotropic-prototype-chain": "~0.13.1",
         "isotropic-pubsub": "~0.15.0",
+        "isotropic-state": "~0.0.0",
         "isotropic-timeout": "~0.13.1",
         "isotropic-value-to-source": "~0.9.1"
     },
