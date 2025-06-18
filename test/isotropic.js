@@ -20,6 +20,7 @@ import _naturalSort from '../js/natural-sort.js';
 import _PropertyChainer from '../js/property-chainer.js';
 import _prototypeChain from '../js/prototype-chain.js';
 import _Pubsub from '../js/pubsub.js';
+import _State from '../js/state.js';
 import _timeout from '../js/timeout.js';
 import _valueToSource from '../js/value-to-source.js';
 
@@ -50,6 +51,7 @@ _mocha.describe('isotropic', () => {
         _chai.expect(_PropertyChainer).to.be.a('function');
         _chai.expect(_prototypeChain).to.be.a('function');
         _chai.expect(_Pubsub).to.be.a('function');
+        _chai.expect(_State).to.be.a('function');
         _chai.expect(_timeout).to.be.a('function');
         _chai.expect(_valueToSource).to.be.a('function');
     });
