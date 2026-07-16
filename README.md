@@ -9,12 +9,12 @@ A collection of utilities for large JavaScript projects with a consistent API.
 
 ## Overview
 
-Isotropic is a modular library of JavaScript utilities that work together to provide a cohesive development experience for complex applications. Rather than importing this package directly, you'll typically want to import only the specific isotropic modules your project needs.
+Isotropic is a modular library of JavaScript utilities that work together to provide a cohesive development experience for complex applications. Rather than importing this package directly, you'll typically want to import only the specific isotropic packages your project needs.
 
 This package serves as:
 1. A central location for documentation and discovery of the entire isotropic ecosystem
-2. A reference implementation demonstrating how the modules integrate
-3. A convenient way to explore the capabilities of all isotropic modules
+2. A reference implementation demonstrating how the packages integrate
+3. A convenient way to explore the capabilities of all isotropic packages
 
 ## Philosophy
 
@@ -22,7 +22,7 @@ The isotropic library follows several core principles:
 
 ### 1. Consistent API Design
 
-All isotropic modules follow similar API patterns and naming conventions, making them predictable and easy to learn.
+All isotropic packages follow similar API patterns and naming conventions, making them predictable and easy to learn.
 
 ### 2. Functional Approach
 
@@ -40,9 +40,9 @@ Many components use a publish-subscribe pattern for extensibility and loose coup
 
 Objects that need initialization follow consistent patterns for setup and teardown.
 
-## Core Modules
+## Core Packages
 
-The isotropic ecosystem consists of numerous specialized modules. Here are some of the most commonly used:
+The isotropic ecosystem consists of numerous specialized packages. Here are some of the most commonly used:
 
 ### isotropic-make
 
@@ -60,7 +60,7 @@ A powerful factory function that creates constructor/factory functions with supp
 import _make from 'isotropic-make';
 
 // Create a Person constructor
-const _Person = _make({
+const _Person = _make('Person', {
     greet() {
         return `Hello, my name is ${this.name}`;
     },
@@ -76,7 +76,7 @@ const _Person = _make({
 });
 
 // Create an Employee that inherits from Person
-const _Employee = _make(_Person, {
+const _Employee = _make('Employee', _Person, {
     work() {
         return `${this.name} is working on ${this.project}`;
     },
@@ -168,7 +168,7 @@ import _Initializable from 'isotropic-initializable';
 import _make from 'isotropic-make';
 
 // Base component with initialization
-const _BaseComponent = _make(_Initializable, {
+const _BaseComponent = _make('BaseComponent', _Initializable, {
     _initialize() {
         console.log('Base initializing...');
         this.baseReady = true;
@@ -177,7 +177,7 @@ const _BaseComponent = _make(_Initializable, {
 });
 
 // Derived component
-const _EnhancedComponent = _make(_BaseComponent, {
+const _EnhancedComponent = _make('EnhancedComponent', _BaseComponent, {
     _initialize() {
         console.log('Enhanced initializing...');
         // Safe to use this.baseReady here
@@ -206,23 +206,29 @@ A reusable platform to manage Node.js process clusters with a clean API for prim
 - Error handling and worker replacement
 - Observable events for worker lifecycle
 
-## All Modules
+## All Packages
 
-The isotropic ecosystem includes the following modules:
+The isotropic ecosystem includes the following packages:
 
-| Module | Description |
+| Package | Description |
 |--------|-------------|
-| **bunyan-stream-isotropic** | Human-friendly output for Bunyan logs |
+| **eslint-plugin-isotropic** | Lint rules and configuration |
+| **isotropic** | This package |
+| **isotropic-backoff** | Escalating backoff strategies for retrying failed tasks |
+| **isotropic-cancel** | Manage the cancellation of asynchronous operations |
 | **isotropic-character-fold** | Replaces special characters with their basic counterparts |
 | **isotropic-cluster** | Manages Node.js process clusters |
 | **isotropic-console** | Configured instance of the Node.js console |
 | **isotropic-create** | Creates objects with specific prototypes while maintaining constructor properties |
+| **isotropic-dev-dependencies** | Shared toolkit |
 | **isotropic-duration-to-string** | Converts duration values to human-readable strings |
 | **isotropic-error** | Enables nested error objects with complete stack traces |
 | **isotropic-for-in** | Object iteration utility similar to Array.forEach |
 | **isotropic-initializable** | Observable initialization lifecycle for objects |
 | **isotropic-later** | Consistent interface for asynchronous timers |
-| **isotropic-logger** | Singleton logger using Bunyan |
+| **isotropic-lexer** | Split a string by a bunch of other strings |
+| **isotropic-logger** | Singleton logger using Pino |
+| **isotropic-logger-pretty** | Format logs for humans |
 | **isotropic-make** | Factory function for creating constructors with inheritance and mixins |
 | **isotropic-mixin** | Utility for creating mixins |
 | **isotropic-mixin-prototype-chain** | Utilities for working with prototype chains in mixins |
@@ -231,6 +237,11 @@ The isotropic ecosystem includes the following modules:
 | **isotropic-property-chainer** | Establishes prototype chains among object properties |
 | **isotropic-prototype-chain** | Utilities for working with prototype chains |
 | **isotropic-pubsub** | Flexible publish-subscribe event system |
+| **isotropic-request** | A convenient HTTP request function |
+| **isotropic-state** | A utility to manage observable state changes |
+| **isotropic-temporal-format** | Parse and render Temporal timestamp values |
+| **isotropic-throttle** | Wait until the appropriate time to continue |
+| **isotropic-timeout-cancel** | Manage the cancellation of asynchronous operations with time limits |
 | **isotropic-timeout** | Implements timeouts for promises or callback functions |
 | **isotropic-value-to-source** | Serializes data to formatted JavaScript code |
 
@@ -253,13 +264,13 @@ A set of ESLint rules and configurations designed specifically for isotropic pro
 A shared package of common development dependencies and configurations:
 
 - Single source of truth for development dependencies
-- Shared configurations for Babel, ESLint, c8, and other tools
+- Shared configurations for ESLint, c8, and other tools
 - Automated setup of git hooks
 - High code coverage standards (100% targets)
 
 ## Getting Started
 
-Instead of installing the full isotropic package, we recommend installing only the specific modules you need:
+Instead of installing the full isotropic package, we recommend installing only the specific packages you need:
 
 ```bash
 npm install isotropic-make isotropic-pubsub
@@ -282,7 +293,7 @@ You may notice that isotropic modules use underscore prefixes for variables. Thi
 
 ### Functional Factory Pattern
 
-The isotropic-make module uses a pattern that combines constructor functions with factory functions, providing the best of both worlds. This approach:
+The isotropic-make package uses a pattern that combines constructor functions with factory functions, providing the best of both worlds. This approach:
 
 1. Eliminates issues with forgetting the `new` keyword
 2. Provides clear inheritance patterns
