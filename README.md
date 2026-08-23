@@ -225,6 +225,7 @@ The isotropic ecosystem includes the following packages:
 | **isotropic-error** | Enables nested error objects with complete stack traces |
 | **isotropic-for-in** | Object iteration utility similar to Array.forEach |
 | **isotropic-initializable** | Observable initialization lifecycle for objects |
+| **isotropic-instance-of** | Similar to the `instanceof` operator but is also aware of mixins |
 | **isotropic-later** | Consistent interface for asynchronous timers |
 | **isotropic-lexer** | Split a string by a bunch of other strings |
 | **isotropic-logger** | Singleton logger using Pino |
@@ -239,6 +240,7 @@ The isotropic ecosystem includes the following packages:
 | **isotropic-pubsub** | Flexible publish-subscribe event system |
 | **isotropic-request** | A convenient HTTP request function |
 | **isotropic-state** | A utility to manage observable state changes |
+| **isotropic-state-context** | A subclass of `isotropic-state` enabling convenient event distribution and data passing |
 | **isotropic-temporal-format** | Parse and render Temporal timestamp values |
 | **isotropic-throttle** | Wait until the appropriate time to continue |
 | **isotropic-timeout-cancel** | Manage the cancellation of asynchronous operations with time limits |
