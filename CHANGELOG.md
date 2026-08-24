@@ -1,8 +1,36 @@
-# Changelog
+# isotropic Changelog
 
 All notable changes to `isotropic`, the meta-package that aggregates the whole library.
 
 This package holds no implementation of its own. It re-exports every Isotropic package from `lib/`, and its version tracks the library as a whole. **Every entry below is a roll-up: the real detail lives in each individual package's changelog**, and this file links the version bumps together so you can see which releases belong to the same group.
+
+## 0.17.0 - 2026-08-23
+
+### Added
+
+**Two new packages**, both at 0.1.0:
+
+- **`isotropic-instance-of`** Similar to the `instanceof` operator but is also aware of mixins.
+- **`isotropic-state-context`** A subclass of `isotropic-state` enabling convenient event distribution and data passing.
+
+### Changed
+
+A library-wide maintenance release. Most packages changed only their published metadata, some gained new functionality.
+
+| Package | What to watch for |
+| --- | --- |
+| `isotropic-pubsub` | **Breaking.** A bulk `once` subscription is now one subscription that fires once in total, not one per event name. Also adds `until`, subscription `filterFunction`, event snapshots, and `distributors` / `subscribe` construction config |
+| `isotropic-state` | **Breaking.** Constructor values are run through the full assignment pipeline: validated, transformed, compared, and published as change events. `autoBatchChanges` is replaced by `batchChangeMode`. Also adds batch handles, `equalityFunction`, `get`, `reset`, `set`, `stateConfig`, `validateInternalFunction`, and writable computed properties |
+| `isotropic-initializable` | Adds `untilInitialized()`, plus `initializing` and `initializeFailed` getters |
+| `isotropic-cluster` | Adds `active`, `shuttingDown`, and `shutDownCompleted` getters on `ClusterPrimary` |
+| `isotropic-request` | Per-request `subscribe` configs accept a `filterFunction` |
+| `eslint-plugin-isotropic` | Updated ESLint and rule configuration updates |
+| `isotropic-backoff` | Inherits the updates from `Pubsub` |
+| `isotropic-dev-dependencies` | Dependency bumps |
+
+- Every bundled package updated to its current release.
+- Recommends `node ^26.7.0` / `npm ^11.19.0`.
+- `repository` now uses npm's preferred object form with explicit `type` and `url` properties rather than the `github:` shorthand. This is package metadata only.
 
 ## 0.16.0 - 2026-07-15
 
